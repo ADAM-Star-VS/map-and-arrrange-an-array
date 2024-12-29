@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Manipulation with JavaScript</title>
+</head>
+<body>
+
+  <h1>Array Manipulation</h1>
+
+  <div id="output"></div>
+
+  <script>
+    const numbers = [5, 2, 9, 1, 5, 6];
+
+    // 1. Map: Create a new array by applying a function to each element
+    const doubledNumbers = numbers.map(number => number * 2);
+
+    // 2. Filter: Create a new array with elements that pass a test
+    const evenNumbers = numbers.filter(number => number % 2 === 0);
+
+    // 3. Reduce: Reduce the array to a single value
+    const sumOfNumbers = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    // 4. Sort: Sort the array in ascending order
+    const sortedNumbers = numbers.slice().sort((a, b) => a - b); 
+
+    // 5. Reverse: Reverse the order of elements in the array
+    const reversedNumbers = numbers.slice().reverse();
+
+    // 6. Concat: Combine two or more arrays
+    const moreNumbers = [10, 20, 30];
+    const combinedNumbers = numbers.concat(moreNumbers);
+
+    // 7. Find: Find the first element that satisfies a condition
+    const foundNumber = numbers.find(number => number > 5);
+
+    // 8. FindIndex: Find the index of the first element that satisfies a condition
+    const foundIndex = numbers.findIndex(number => number === 5);
+
+    // 9. Includes: Check if an array includes a certain value
+    const includesFive = numbers.includes(5);
+
+    // 10. Some: Check if at least one element in the array satisfies a condition
+    const hasEvenNumber = numbers.some(number => number % 2 === 0);
+
+    // 11. Every: Check if all elements in the array satisfy a condition
+    const allPositive = numbers.every(number => number > 0);
+
+    // Display output in the HTML
+    const outputDiv = document.getElementById("output");
+
+    outputDiv.innerHTML = `
+      <h2>Array Manipulation Results</h2>
+      <p>Doubled Numbers: ${doubledNumbers}</p>
+      <p>Even Numbers: ${evenNumbers}</p>
+      <p>Sum of Numbers: ${sumOfNumbers}</p>
+      <p>Sorted Numbers: ${sortedNumbers}</p>
+      <p>Reversed Numbers: ${reversedNumbers}</p>
+      <p>Combined Numbers: ${combinedNumbers}</p>
+      <p>Found Number: ${foundNumber}</p>
+      <p>Found Index: ${foundIndex}</p>
+      <p>Includes 5: ${includesFive}</p>
+      <p>Has Even Number: ${hasEvenNumber}</p>
+      <p>All Positive: ${allPositive}</p>
+    `;
+
+  </script>
+
+</body>
+</html>
